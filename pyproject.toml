@@ -7,6 +7,8 @@ requires-python = ">=3.11"
 dependencies = [
     "chromadb>=1.5.0",
     "faiss-cpu>=1.13.2",
+    "fastapi>=0.135.1",
+    "flask",
     "ipykernel>=7.2.0",
     "langchain>=1.2.10",
     "langchain-community>=0.4.1",

@@ -11,7 +11,7 @@ from langchain_community.vectorstores import FAISS
 
 def ingest_documents(
     pdf_path: Path | str,
-    index_folder: Path | str = "../vectorDB",
+    index_folder: Path | str = "vectorDB",
     index_name: str = "Faiss_index",
     chunk_size: int = 800,
     chunk_overlap: int = 150,

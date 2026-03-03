@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from backend.model import assistant
+from app.model import assistant
 
 
 class ChatRequest(BaseModel):

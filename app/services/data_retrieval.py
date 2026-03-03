@@ -6,7 +6,7 @@ from langchain_community.vectorstores import FAISS
 
 
 def load_retriever(
-    index_folder: Path | str = "../vectorDB",
+    index_folder: Path | str = "vectorDB",
     index_name: str = "Faiss_index",
     embedding_model: Optional[HuggingFaceEmbeddings] = None,
     k: int = 6,

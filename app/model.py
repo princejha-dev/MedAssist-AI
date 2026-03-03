@@ -4,7 +4,7 @@ from typing import List, Any
 
 from dotenv import load_dotenv
 
-from backend.rag.data_retrieval import load_retriever
+from app.services.data_retrieval import load_retriever
 
 # import whichever LLM you intend to use; we default to Gemini/Google
 from langchain_google_genai import ChatGoogleGenerativeAI
