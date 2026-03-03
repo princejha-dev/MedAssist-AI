@@ -11,12 +11,40 @@ indexed material.
 ## Workspace structure
 
 ```
-backend/           # Python FastAPI service + RAG logic
-  rag/             # ingestion & retrieval modules
-frontend/          # React chat user interface
-documents/         # source PDF(s) used for indexing
-vectorDB/          # generated FAISS index
-notebook/          # exploratory Jupyter notebook (demo)
+medical-rag-chatbot/
+│
+├── app/                      # Main backend application package
+│   ├── __init__.py
+│   │
+│   ├── main.py               # FastAPI entry point
+│   ├── model.py              # MedicalChatbot class
+│   │
+│   ├── services/             # Business logic layer
+│   │   ├── __init__.py
+│   │   ├── data_ingestion.py
+│   │   └── data_retrieval.py
+│   │
+│   └── core/                 # Config & shared utilities
+│       ├── __init__.py
+│       └── config.py
+│
+├── vectorDB/                 # FAISS index storage (generated)
+│
+├── documents/                # PDFs for ingestion
+│   └── medical_book.pdf
+│
+├── frontend/                 # Your HTML/CSS/JS
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── notebooks/                # Jupyter experiments
+│   └── rag_testing.ipynb
+│
+├── .env
+├── .gitignore
+├── pyproject.toml            # since you're using uv
+└── README.md
 ```
 
 ## Getting started
