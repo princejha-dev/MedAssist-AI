@@ -110,3 +110,8 @@ medical-rag-chatbot/
 
 Feel free to enhance styles, swap the LLM provider, or add more medical
 documents to the corpus.
+
+### status 
+```
+WORKING
+```
