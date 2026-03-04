@@ -49,6 +49,7 @@ Answer in clear language; use bullet points where appropriate.
 
     def _init_llm(self):
         # currently supporting Google Gemini or OpenAI (as examples)
+        print("Gemini key loaded:", os.getenv("GEMINI_API_KEY"))
         gemini_key = os.getenv("GEMINI_API_KEY")
         if gemini_key:
             os.environ["GEMINI_API_KEY"] = gemini_key
@@ -82,7 +83,7 @@ Answer in clear language; use bullet points where appropriate.
         if not question or not question.strip():
             return "Please provide a question."
 
-        docs = self.retriever.get_relevant_documents(question)
+        docs = self.retriever.invoke(question)
         contexts = [d.page_content for d in docs if d.page_content]
         prompt = self._build_prompt(question, contexts)
 
@@ -90,6 +91,7 @@ Answer in clear language; use bullet points where appropriate.
         response = self.llm.invoke(prompt)
         # the ``invoke`` method returns a ChatResult-like object with `.content`
         return response.content.strip()
+        
 
 
 # export a singleton for simple imports
